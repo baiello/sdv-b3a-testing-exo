@@ -5,8 +5,10 @@
   "main": "server.js",
   "license": "MIT",
   "scripts": {
-    "test": "NODE_ENV=test sequelize-cli db:migrate && jest test -i tests/user.test.js --watch",
-    "run:dev": "NODE_ENV=development sequelize-cli db:migrate && node server.js",
+    "test:unix": "NODE_ENV=test sequelize-cli db:migrate && jest test -i tests/user.test.js --watch",
+    "test:win": "$env:NODE_ENV=\"test\" sequelize-cli db:migrate && jest test -i tests/user.test.js --watch",
+    "run:dev:unix": "NODE_ENV=development sequelize-cli db:migrate && node server.js",
+    "run:dev:win": "$env:NODE_ENV=\"production\" sequelize-cli db:migrate && node server.js",
     "lint": "eslint ./"
   },
   "dependencies": {

@@ -7,7 +7,9 @@
 ## Pour lancer l'API :
 * `cd Back`
 * Installer les dépendances du projet : `npm install`
-* Lancer l'API : `npm run run:dev`
+* Lancer l'API :
+  * Windows : `npm run run:dev:windows`
+  * Unix : `npm run run:dev:unix`
 
 ## Pour lancer l'application Front' :
 * `cd Front`
