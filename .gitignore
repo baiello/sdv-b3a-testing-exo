@@ -1,0 +1,8 @@
+Back/database_test.sqlite
+Back/database_dev.sqlite
+Back/node_modules/
+Back/coverage/
+
+Front/node_modules
+Front/coverage
+Front/.idea
