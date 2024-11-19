@@ -13,6 +13,6 @@
 
 ## Pour lancer l'application Front' :
 * `cd Front`
-* Installer les dépendances du projet : `npm install`
+* Installer les dépendances du projet : `yarn`
 * Installer live-server : `npm install -g live-server`
 * Lancer l'application : `live-server`
