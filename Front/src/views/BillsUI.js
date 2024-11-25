@@ -23,8 +23,38 @@ const rows = (data) => {
   return (data && data.length) ? data.map(bill => row(bill)).join("") : ""
 }
 
+export const transformDate = (dateString) => {
+  const tryDate = new Date(dateString);
+
+  if (tryDate != 'Invalid Date') {
+    return tryDate;
+  }
+
+  let dateArray = dateString.split(' ');
+
+  const monthsMap = {
+    'Jan.': '01',
+    'Fév.': '02',
+    'Mar.': '03',
+    'Avr.': '04',
+    'Mai.': '05',
+    'Juin.': '06',
+    'Jui.': '07',
+    'Aoû.': '08',
+    'Sep.': '09',
+    'Oct.': '10',
+    'Nov.': '11',
+    'Déc.': '12',
+  }
+
+  return new Date(`${dateArray[2]}-${monthsMap[dateArray[1]]}-${dateArray[0]}`);
+}
+
 export default ({ data: bills, loading, error }) => {
-  
+  if ( bills && bills.length > 0 ) {
+    bills.sort((a,b) => transformDate(b.date) - transformDate(a.date));
+  }
+
   const modal = () => (`
     <div class="modal fade" id="modaleFile" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -47,7 +77,7 @@ export default ({ data: bills, loading, error }) => {
   } else if (error) {
     return ErrorPage(error)
   }
-  
+
   return (`
     <div class='layout'>
       ${VerticalLayout(120)}
