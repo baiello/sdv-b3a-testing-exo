@@ -27,3 +27,17 @@
 2. Installer les dépendances du projet : `npm install`
 3. Installer live-server : `npm install -g live-server`
 4. Lancer l'application : `live-server`
+
+
+
+## Credentials
+
+### Employé
+
+- username : `employee@test.tld`
+- password : `employee`
+
+### Admin
+
+- username : `admin@test.tld`
+- password : `admin`
